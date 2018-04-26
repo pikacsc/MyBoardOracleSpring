@@ -5,9 +5,11 @@ import org.apache.commons.logging.LogFactory;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.stereotype.Component;
+import org.springframework.util.StopWatch;
 
-
+@EnableAspectJAutoProxy
 @Aspect
 @Component
 public class AroundExample {
@@ -18,18 +20,15 @@ public class AroundExample {
 		   System.out.println("/////////////////////////////////////////////////////////////////////////////Asepect");
 	   }
 	     
-		@Around("excution(* com.myboard.web.controller..*(..))")
+		@Around("execution(* com.myboard.web.controller.BoardController.postInsert(..))")  
 		public Object doBasicProfiling(ProceedingJoinPoint pjp) throws Throwable {
-			
-			
-			//스톱워치 시작
-			long startTime = System.currentTimeMillis();
-			Object retVal = pjp.proceed();
-			//스톱워치 멈춤
-			long elapsedTime = System.currentTimeMillis() - startTime;
-	        log.debug(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 게시판 insert 소요 시간 :" +elapsedTime*1000 +"초");
-	        System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 게시판 insert 소요 시간 :" +elapsedTime*1000 +"초");
-	        return retVal;
+			   StopWatch watch = new StopWatch();
+		        watch.start();
+		        Object obj=pjp.proceed();  
+		        watch.stop();
+		        Double elapsedTimeBySecond = watch.getTotalTimeSeconds();
+		        System.out.println("──────────────────────────insertBoard 메소드 소요시간 = "+elapsedTimeBySecond+"초───────────────────────────");
+		        return obj;  
 	    }
 
 }
