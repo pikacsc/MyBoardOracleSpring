@@ -21,6 +21,11 @@ public class HomeController {
 		return "home";
 	}
 	
+	@GetMapping("/AOP")
+	public String getAOPView() {
+		return "AOPview";
+	}
+	
 	@GetMapping("/404.html")
 	public String get404View() {
 		return "error/404";
