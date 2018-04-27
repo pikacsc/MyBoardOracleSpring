@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class AOPModel {
-	private String stdName;
-	private String methodName;
-	private String time;
+	private String stdname;
+	private String pointcut;
+	private String elapsedtime;
 }

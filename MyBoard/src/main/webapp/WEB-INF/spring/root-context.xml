@@ -24,7 +24,7 @@
 	</bean>
 	
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="com.myboard.board.repo, com.myboard.user.repo"/>
+		<property name="basePackage" value="com.myboard.board.repo, com.myboard.user.repo, com.myboard.aop"/>
 	</bean>		
 	
 	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate" destroy-method="clearCache">
@@ -35,11 +35,5 @@
 		<property name="dataSource" ref="dataSource" />
 	</bean>
 	<tx:annotation-driven transaction-manager="transactionManager"/>
-<!-- 	<aop:config>
-		<aop:advisor advice-ref=""/>
-		<aop:pointcut expression="excution(com.myboard.web.controller.*.*(..))" id="controller"/>
-		<aop:aspect ref="test">
-			<aop:around method=""/>
-		</aop:aspect>
-	</aop:config> -->
+
 </beans>

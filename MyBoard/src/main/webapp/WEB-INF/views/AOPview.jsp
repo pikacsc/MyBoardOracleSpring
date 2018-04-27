@@ -5,26 +5,34 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>AOP TABLE</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<style type="text/css">
+.bs-example {
+	margin: 20px;
+}
+.pagination {
+	margin: 0px !important;
+}
+</style>
 </head>
 <body>
 <h2>AOP TABLE</h2>
 		<table class="table table-condensed table-hover table-striped">
 			<thead>
 				<tr>
-					<th class="col-xs-1 col-sm-1 col-md-1 col-lg-1">No</th>
-					<th class="col-xs-6 col-sm-6 col-md-6 col-lg-6">담당 개발자</th>
-					<th class="col-xs-2 col-sm-2 col-md-2 col-lg-2">담당 메소드명</th>
+					<th class="col-xs-2 col-sm-2 col-md-2 col-lg-2">개발자</th>
+					<th class="col-xs-2 col-sm-2 col-md-2 col-lg-2">포인트컷</th>
 					<th class="col-xs-2 col-sm-2 col-md-2 col-lg-2">소요시간</th>
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach items="#{aopresult}" var="aop">
+				<c:forEach items="${aopresult}" var="aop">
 					<tr>
-						<td></td>
 						<td>${aop.stdname }</td>
-						<td>${aop.method }</td>
-						<td>${aop.time }</td>
+						<td>${aop.pointcut }</td>
+						<td>${aop.elapsedtime }</td>
 					</tr>
 				</c:forEach>
 			</tbody>

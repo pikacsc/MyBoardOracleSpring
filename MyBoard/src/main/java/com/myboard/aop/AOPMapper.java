@@ -1,14 +1,16 @@
 package com.myboard.aop;
 
-import java.util.List;
+import java.util.ArrayList;
 
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
+@Mapper
 public interface AOPMapper {
 	
 	public int insert(AOPModel aop);
 	
 	
 	@Select("SELECT * FROM aoptable")
-	public List<AOPModel> selectAll();
+	public ArrayList<AOPModel> selectAll();
 }

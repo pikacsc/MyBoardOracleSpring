@@ -31,16 +31,16 @@ public class AroundExample {
 	     
 		@Around("execution(* com.myboard.web.controller.BoardController.postInsert(..))")  
 		public Object doBasicProfiling(ProceedingJoinPoint pjp) throws Throwable {
-			   StopWatch watch = new StopWatch();
+			    StopWatch watch = new StopWatch();
 		        watch.start();
 		        Object obj=pjp.proceed();  
 		        watch.stop();
 		        Double elapsedTimeBySecond = watch.getTotalTimeSeconds();
 		        System.out.println("──────────────────────────insertBoard 메소드 소요시간 = "+elapsedTimeBySecond+"초───────────────────────────");
 		        AOPModel aop = new AOPModel();
-		        aop.setStdName("최성찬");
-		        aop.setMethodName("postInsert()");
-		        aop.setTime(elapsedTimeBySecond+"초");
+		        aop.setStdname("최성찬");
+		        aop.setPointcut("postInsert()");
+		        aop.setElapsedtime(elapsedTimeBySecond+"초");
 		        aopMapper.insert(aop);
 		        return obj;  
 	    }

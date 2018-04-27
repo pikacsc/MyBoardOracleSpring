@@ -9,6 +9,7 @@
 	</settings>
 	
 	<typeAliases>
+		<package name="com.myboard.aop"/>
 		<package name="com.myboard.board.model"/>
 		<package name="com.myboard.user.model"/>
 	</typeAliases>
