@@ -14,6 +14,9 @@ public interface BoardMapper {
 	public int update(Board board);
 	public int delete(long id);
 	
+
+	
+	
 	@Select("SELECT COUNT(*) FROM xboard")
 	public int count();
 	@Select("SELECT * FROM xboard ORDER BY id DESC")

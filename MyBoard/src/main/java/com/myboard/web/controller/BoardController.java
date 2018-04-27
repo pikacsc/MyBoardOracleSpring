@@ -1,5 +1,9 @@
 package com.myboard.web.controller;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +33,7 @@ public class BoardController {
 	public String active() {
 		return "board";
 	}
+	
 	
 	@GetMapping()
 	public ModelAndView getBoardsView(

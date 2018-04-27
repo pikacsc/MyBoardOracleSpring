@@ -1,20 +1,20 @@
-package com.myboard.board.dto;
+ï»¿package com.myboard.board.dto;
 
 import lombok.Data;
 
 @Data
 public class Pager {
-	private int page; //ÇöÀç ÆäÀÌÁö
-	private int size; //ÇÑÆäÀÌÁö¿¡ ³ª¿À´Â °Ô½Ã±Û ¼ö
-	private int bsize; // ÇÑºí·Ï´ç ³ª¿À´Â ÆäÀÌÁö ¼ö
+	private int page; //í˜„ì¬ í˜ì´ì§€
+	private int size; //í•œí˜ì´ì§€ì— ë‚˜ì˜¤ëŠ” ê²Œì‹œê¸€ ìˆ˜
+	private int bsize; // í•œë¸”ë¡ë‹¹ ë‚˜ì˜¤ëŠ” í˜ì´ì§€ ìˆ˜
 	
-	private int rows; //¸ğµç °Ô½Ã±Û ¼ö
-	private int pages; // ¸ğµç ÆäÀÌÁö ¼ö
-	private int blocks; //¸ğµç ºí·Ï ¼ö
+	private int rows; //ëª¨ë“  ê²Œì‹œê¸€ ìˆ˜
+	private int pages; // ëª¨ë“  í˜ì´ì§€ ìˆ˜
+	private int blocks; //ëª¨ë“  ë¸”ë¡ ìˆ˜
 	
-	private int block; //ÇöÀç ºí·Ï
-	private int bspage; // ÇöÀç ºí·ÏÀÇ ½ÃÀÛÆäÀÌÁö
-	private int bepage; // ÇöÀç ºí·ÏÀÇ ³¡ ÆäÀÌÁö
+	private int block; //í˜„ì¬ ë¸”ë¡
+	private int bspage; // í˜„ì¬ ë¸”ë¡ì˜ ì‹œì‘í˜ì´ì§€
+	private int bepage; // í˜„ì¬ ë¸”ë¡ì˜ ë í˜ì´ì§€
 	public Pager(int page, int size, int bsize, int rows) {
 		this.page = page;
 		this.size = size;

@@ -20,6 +20,7 @@
 </head>
 <body>
 	<c:import url="nav_top.jsp"></c:import>
+	
 
 	<div class="bs-example">
 		<h2>Board</h2>
@@ -34,7 +35,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach items="#{boards }" var="board">
+				<c:forEach items="#{boards}" var="board">
 					<tr>
 						<td>${board.id }</td>
 						<td><a href="<c:url value='/boards/view/${board.id }'/>">${board.title }</a></td>

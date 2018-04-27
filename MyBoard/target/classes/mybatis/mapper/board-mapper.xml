@@ -10,6 +10,12 @@
 		<result property="hitCount" column="HIT_COUNT" />
 	</resultMap>
 	
+
+
+	
+	
+	
+	
 	<insert id="insert" parameterType="Board">
 		INSERT INTO xboard(id, writer, title, content, reg_date, hit_count)
 		VALUES(XBOARD_SEQ.NEXTVAL, #{writer}, #{title}, #{content}, SYSDATE, 0)

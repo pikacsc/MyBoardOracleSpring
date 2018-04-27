@@ -1,4 +1,4 @@
-package com.myboard.web.controller;
+ï»¿package com.myboard.web.controller;
 
 import java.util.List;
 
@@ -35,10 +35,10 @@ public class UserController {
 		User duplicatedUser = userMapper.selectByEmail(user.getEmail());
 		if(duplicatedUser == null) {
 			userMapper.insert(user);
-			redirectAttributes.addFlashAttribute("result", "¼º°ø");
+			redirectAttributes.addFlashAttribute("result", "ì„±ê³µ");
 		} else {
-			redirectAttributes.addFlashAttribute("result", "½ÇÆĞ");
-			redirectAttributes.addFlashAttribute("error", "½ÇÆĞ: Áßº¹µÇ´Â ÀÌ¸ŞÀÏ ÁÖ¼Ò ÀÔ´Ï´Ù.");
+			redirectAttributes.addFlashAttribute("result", "ì‹¤íŒ¨");
+			redirectAttributes.addFlashAttribute("error", "ì‹¤íŒ¨: ì¤‘ë³µë˜ëŠ” ì´ë©”ì¼ ì£¼ì†Œ ì…ë‹ˆë‹¤.");
 			
 		}
 		return "redirect:/login";
